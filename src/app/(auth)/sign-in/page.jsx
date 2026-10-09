@@ -27,7 +27,7 @@ const SignIn = () => {
       callbackURL: "/", // An optional URL to redirect to after the user signs in. (optional)
     });
 
-    console.log(signIndata, error);
+    //console.log(signIndata, error);
   };
   return (
     <div className="flex justify-center">
