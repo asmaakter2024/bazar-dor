@@ -1,11 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Button } from "@heroui/react";
 import { authClient } from "../lib/auth-client";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
-export default function Navbar() {
+export default function Navbar({ categories }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  //const [categories, setCategories] = useState([]);
+
   const router = useRouter();
 
   const { data: session } = authClient.useSession();
@@ -20,6 +23,17 @@ export default function Navbar() {
       },
     });
   };
+  // useEffect(() => {
+  //   fetch(`${baseUrl}/categories`)
+  //     .then((res) => res.json())
+  //     .then((data) => setCategories(data))
+  //     .catch((err) => console.log(err));
+  // }, []);
+  //console.log(categories);
+
+  const date = new Date().toLocaleDateString("bn-BD", {
+    dateStyle: "full",
+  });
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
@@ -55,34 +69,39 @@ export default function Navbar() {
               )}
             </svg>
           </button>
-          <div className="flex items-center gap-3">
-            {/* <Logo /> */}
-            <Link href="/" className="font-bold">
-              Home
-            </Link>
+          <div className="flex flex-col items-center">
+            <div className="flex items-center gap-2">
+              <Image
+              className="bg-green-600 rounded-3xl"
+                src="/logo-icon.png"
+                alt="bazar dor"
+                width={30}
+                height={30}
+                priority
+              />
+              <span className="text-2xl font-bold text-black-700">
+                বাজার দর
+              </span>
+            </div>
+            <span className="text-xs text-neutral-500">{date}</span>
           </div>
         </div>
         <ul className="hidden items-center gap-4 md:flex">
-          <li>
-            <Link href="#">Features</Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="font-medium text-accent"
-              aria-current="page"
-            >
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            {session?.user && (
-              <li>
-                {" "}
-                <Link href="/profile">Profile</Link>
-              </li>
-            )}
-          </li>
+          {categories?.map((cat) => (
+            <li key={cat?.id}>
+              <Link>
+                <span>{cat?.icon}</span>
+                {cat?.nameBn}
+              </Link>
+            </li>
+          ))}
+
+          {session?.user && (
+            <li>
+              {" "}
+              <Link href="/profile">Profile</Link>
+            </li>
+          )}
         </ul>
         <div className="hidden items-center gap-4 md:flex">
           {session?.user ? (

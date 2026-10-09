@@ -9,7 +9,7 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { signIn } from "../../../lib/auth-client";
+import { authClient } from "../../../lib/auth-client";
 
 const SignIn = () => {
   const onSubmit = async (e) => {
@@ -29,6 +29,13 @@ const SignIn = () => {
 
     //console.log(signIndata, error);
   };
+
+  const logIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="flex justify-center">
       <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
@@ -78,6 +85,7 @@ const SignIn = () => {
             Reset
           </Button>
         </div>
+        <Button onClick={logIn}>Google SignIn</Button>
       </Form>
     </div>
   );
