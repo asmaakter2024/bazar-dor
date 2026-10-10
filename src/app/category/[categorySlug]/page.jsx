@@ -52,7 +52,7 @@ const CategoryProducts = async ({ params }) => {
       </div>
 
       {/* Sort bar */}
-      <section className="mt-5 flex justify-end rounded-2xl border border-[#dfe7df] bg-white/80 px-4 py-3  mb-5">
+      <section className="mt-5 flex justify-end rounded-2xl border border-[#dfe7df] bg-white/80 px-4 py-3">
         <label className="flex items-center gap-2 text-sm text-[#788078]">
           সাজান
           <select
