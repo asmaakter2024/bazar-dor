@@ -1,6 +1,7 @@
 import Image from "next/image";
 import baseUrl from "@/services/baseUrl";
 import ProductCard from "@/components/ProductCard";
+import Marquee from "@/components/Marquee";
 
 const getProducts = async () => {
   const res = await fetch(`${baseUrl}/products`);
@@ -17,34 +18,38 @@ export default async function Home() {
   console.log(upProducts);
 
   return (
-    <div className="w-full max-w-7xl mx-auto space-y-8 space-x-8">
-      {/* up products */}
-      <div>
-        <p>আজ দাম বেড়েছে</p>
-        <div className="grid grid-cols-3 gap-3">
-          {upProducts.map((product) => (
-            <ProductCard key={product.id} product={product}></ProductCard>
-          ))}
-        </div>
-      </div>
+    <div>
+      <Marquee products={products}></Marquee>
 
-      {/* down products */}
-      <div>
-        <p>আজ দাম কমেছে</p>
-        <div className="grid grid-cols-3 gap-3">
-          {downProducts.map((product) => (
-            <ProductCard key={product.id} product={product}></ProductCard>
-          ))}
+      <div className="w-full max-w-7xl mx-auto space-y-8 space-x-8">
+        {/* up products */}
+        <div>
+          <p>আজ দাম বেড়েছে</p>
+          <div className="grid grid-cols-3 gap-3">
+            {upProducts.map((product) => (
+              <ProductCard key={product.id} product={product}></ProductCard>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* all products */}
-      <div>
-        <p >সব পণ্য</p>
-        <div className="grid grid-cols-3 gap-3">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product}></ProductCard>
-          ))}
+        {/* down products */}
+        <div>
+          <p>আজ দাম কমেছে</p>
+          <div className="grid grid-cols-3 gap-3">
+            {downProducts.map((product) => (
+              <ProductCard key={product.id} product={product}></ProductCard>
+            ))}
+          </div>
+        </div>
+
+        {/* all products */}
+        <div>
+          <p>সব পণ্য</p>
+          <div className="grid grid-cols-3 gap-3">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product}></ProductCard>
+            ))}
+          </div>
         </div>
       </div>
     </div>
