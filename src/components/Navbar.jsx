@@ -72,7 +72,7 @@ export default function Navbar({ categories }) {
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-2">
               <Image
-              className="bg-green-600 rounded-3xl"
+                className="bg-green-600 rounded-3xl"
                 src="/logo-icon.png"
                 alt="bazar dor"
                 width={30}
@@ -89,7 +89,7 @@ export default function Navbar({ categories }) {
         <ul className="hidden items-center gap-4 md:flex">
           {categories?.map((cat) => (
             <li key={cat?.id}>
-              <Link>
+              <Link href={`/category/${cat?.slug}`}>
                 <span>{cat?.icon}</span>
                 {cat?.nameBn}
               </Link>
