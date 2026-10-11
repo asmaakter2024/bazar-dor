@@ -2,6 +2,7 @@ import Image from "next/image";
 import baseUrl from "@/services/baseUrl";
 import ProductCard from "@/components/ProductCard";
 import Marquee from "@/components/Marquee";
+import Banner from "@/components/Banner";
 
 const getProducts = async () => {
   const res = await fetch(`${baseUrl}/products`);
@@ -21,10 +22,12 @@ export default async function Home() {
     <div>
       <Marquee products={products}></Marquee>
 
+      <Banner/>
+
       <div className="w-full max-w-7xl mx-auto space-y-8 space-x-8">
         {/* up products */}
         <div>
-          <p>আজ দাম বেড়েছে</p>
+          <p className="text-2xl font-medium"><span className="text-red-600">▲</span>আজ দাম বেড়েছে</p>
           <div className="grid grid-cols-3 gap-3">
             {upProducts.map((product) => (
               <ProductCard key={product.id} product={product}></ProductCard>
@@ -34,7 +37,7 @@ export default async function Home() {
 
         {/* down products */}
         <div>
-          <p>আজ দাম কমেছে</p>
+          <p className="text-2xl font-medium"><span className="text-green-600">▼</span>আজ দাম কমেছে</p>
           <div className="grid grid-cols-3 gap-3">
             {downProducts.map((product) => (
               <ProductCard key={product.id} product={product}></ProductCard>
@@ -44,7 +47,7 @@ export default async function Home() {
 
         {/* all products */}
         <div>
-          <p>সব পণ্য</p>
+          <p className="text-2xl font-medium">সব পণ্য</p>
           <div className="grid grid-cols-3 gap-3">
             {products.map((product) => (
               <ProductCard key={product.id} product={product}></ProductCard>

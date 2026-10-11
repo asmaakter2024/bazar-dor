@@ -9,7 +9,7 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { authClient } from "../../../lib/auth-client";
+import { authClient, signIn } from "../../../lib/auth-client";
 
 const SignIn = () => {
   const onSubmit = async (e) => {

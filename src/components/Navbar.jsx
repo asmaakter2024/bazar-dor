@@ -106,13 +106,13 @@ export default function Navbar({ categories }) {
         <div className="hidden items-center gap-4 md:flex">
           {session?.user ? (
             <>
-              <Button onClick={handleSignOut}>Logout</Button>
+              <Button onClick={handleSignOut}>লগ আউট</Button>
             </>
           ) : (
             <>
-              <Link href="/sign-in">Login</Link>
+              <Link href="/sign-in">সাইন ইন</Link>
               <Link href="/sign-up">
-                <Button>Sign UP</Button>
+                <Button>সাইন আপ</Button>
               </Link>
             </>
           )}
