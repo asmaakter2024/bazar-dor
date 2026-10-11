@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import baseUrl from "@/services/baseUrl";
 
 import { Hind_Siliguri } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const hindSiliguri = Hind_Siliguri({
   subsets: ["bengali", "latin"],
@@ -49,6 +50,7 @@ export default async function RootLayout({ children }) {
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         <Navbar categories={categories} />
         {children}
+        <Footer />
       </body>
     </html>
   );
