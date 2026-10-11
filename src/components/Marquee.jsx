@@ -8,7 +8,7 @@ const Marquee = ({ products }) => {
       <MarqueeText direction="right" duration={10}>
         {products.map((product) => (
           <div key={product?.id}>
-            <p className="mr-12">●{product?.nameBn}</p>
+            <p className="mr-12">{`${product?.image}${product?.nameBn}`} {`${product?.today}/${product?.unit} ${product?.change?.pct} %`}</p>
           </div>
         ))}
       </MarqueeText>

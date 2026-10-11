@@ -20,14 +20,20 @@ export default async function Home() {
 
   return (
     <div>
-      <Marquee products={products}></Marquee>
+      <div>
+        <Marquee products={products}></Marquee>
+      </div>
 
-      <Banner/>
+      <div>
+        <Banner />
+      </div>
 
       <div className="w-full max-w-7xl mx-auto space-y-8 space-x-8">
         {/* up products */}
         <div>
-          <p className="text-2xl font-medium"><span className="text-red-600">▲</span>আজ দাম বেড়েছে</p>
+          <p className="text-2xl font-medium">
+            <span className="text-red-600">▲</span>আজ দাম বেড়েছে
+          </p>
           <div className="grid grid-cols-3 gap-3">
             {upProducts.map((product) => (
               <ProductCard key={product.id} product={product}></ProductCard>
@@ -37,7 +43,9 @@ export default async function Home() {
 
         {/* down products */}
         <div>
-          <p className="text-2xl font-medium"><span className="text-green-600">▼</span>আজ দাম কমেছে</p>
+          <p className="text-2xl font-medium">
+            <span className="text-green-600">▼</span>আজ দাম কমেছে
+          </p>
           <div className="grid grid-cols-3 gap-3">
             {downProducts.map((product) => (
               <ProductCard key={product.id} product={product}></ProductCard>

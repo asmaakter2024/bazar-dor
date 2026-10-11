@@ -86,7 +86,7 @@ export default function Navbar({ categories }) {
             <span className="text-xs text-neutral-500">{date}</span>
           </div>
         </div>
-        <ul className="hidden items-center gap-4 md:flex">
+        {/* <ul className="hidden items-center gap-4 md:flex">
           {categories?.map((cat) => (
             <li key={cat?.id}>
               <Link href={`/category/${cat?.slug}`}>
@@ -102,7 +102,7 @@ export default function Navbar({ categories }) {
               <Link href="/profile">Profile</Link>
             </li>
           )}
-        </ul>
+        </ul> */}
         <div className="hidden items-center gap-4 md:flex">
           {session?.user ? (
             <>
@@ -145,6 +145,26 @@ export default function Navbar({ categories }) {
           </ul>
         </div>
       )}
+
+      <div>
+        <ul className="mx-auto flex h-16 gap-5 max-w-5xl items-center  px-6">
+          {categories?.map((cat) => (
+            <li key={cat?.id}>
+              <Link href={`/category/${cat?.slug}`}>
+                <span>{cat?.icon}</span>
+                {cat?.nameBn}
+              </Link>
+            </li>
+          ))}
+
+          {session?.user && (
+            <li>
+              {" "}
+              <Link href="/profile">আমার প্রোফাইল</Link>
+            </li>
+          )}
+        </ul>
+      </div>
     </nav>
   );
 }
