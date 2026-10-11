@@ -34,3 +34,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+# বাজার দর | BazarDor
+
+**প্রতিদিনের বাজারদর, এক নজরে।**
+
+বাজার দর একটি বাংলা ভাষার ওয়েব অ্যাপ, যেখানে বিভিন্ন নিত্যপ্রয়োজনীয় পণ্যের সর্বশেষ দাম ও দামের পরিবর্তন সহজে দেখা যায়। বাজারের দরদাম সম্পর্কে দ্রুত ধারণা পেতে পণ্যগুলোকে বিভাগ অনুযায়ী সাজানো হয়েছে।
+
+## ✨ প্রধান ফিচার
+
+1. **আজকের বাজারদর:** পণ্যভিত্তিক বর্তমান দাম এক জায়গায় দেখা যায়।
+2. **দাম বাড়া–কমার তালিকা:** কোন পণ্যের দাম বেড়েছে বা কমেছে, তা পরিবর্তনের হারসহ বোঝা যায়।
+3. **বিভাগভিত্তিক পণ্য:** ফল, সবজি, মাছ, মাংস, চাল-ডালসহ প্রয়োজনীয় পণ্য গুছিয়ে দেখার সুবিধা।
+4. **সহজ ও বাংলা-প্রথম ইন্টারফেস:** পরিষ্কার কার্ড ও সংক্ষিপ্ত তথ্যের মাধ্যমে দ্রুত বাজারদর দেখা যায়।
+5. **ব্যবহারকারী অ্যাকাউন্ট:** Better Auth ব্যবহার করে সাইন-ইন/অ্যাকাউন্ট ব্যবস্থাপনা।
+
+## 🧰 ব্যবহৃত প্রযুক্তি
+
+- **JavaScript** — অ্যাপ্লিকেশনের লজিক
+- **MongoDB** — ডেটা সংরক্ষণ
+- **Better Auth** — অথেনটিকেশন
+- **Hero UI** এবং **DaisyUI** — UI উপাদান
+- **Tailwind CSS** — স্টাইলিং ও রেসপন্সিভ লেআউট
+- **React Toastify** — ব্যবহারকারীকে নোটিফিকেশন দেখানো
+
+## 🎯 প্রকল্পের লক্ষ্য
+
+বাংলাভাষী ব্যবহারকারীদের নিত্যপ্রয়োজনীয় পণ্যের বাজারদর ও দামের ওঠানামা দ্রুত, সহজে এবং পরিষ্কারভাবে জানানো।
