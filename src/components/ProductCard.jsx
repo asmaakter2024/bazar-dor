@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <Link href={`/product/${product?.slug}`}>
-      <article className="rounded-2xl border border-[#dfe7df] bg-white p-3">
+      <article className="rounded-2xl border border-[#dfe7df] bg-white p-3 mb-5">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f1f5f1] text-xl">
             {product.image || "🛒"}
