@@ -95,6 +95,8 @@ export default function Profile() {
           {user.image ? (
             <Image
               src={user.image}
+              height={50}
+              width={50}
               alt="প্রোফাইল ছবি"
               className="h-[54px] w-[60px] rounded-xl object-cover"
             />

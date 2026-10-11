@@ -103,6 +103,14 @@ export default function Navbar({ categories }) {
             </li>
           )}
         </ul> */}
+
+        {session?.user && (
+          <li>
+            {" "}
+            <Link href="/profile">আমার প্রোফাইল</Link>
+          </li>
+        )}
+
         <div className="hidden items-center gap-4 md:flex">
           {session?.user ? (
             <>
@@ -157,12 +165,12 @@ export default function Navbar({ categories }) {
             </li>
           ))}
 
-          {session?.user && (
+          {/* {session?.user && (
             <li>
               {" "}
               <Link href="/profile">আমার প্রোফাইল</Link>
             </li>
-          )}
+          )} */}
         </ul>
       </div>
     </nav>
