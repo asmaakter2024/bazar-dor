@@ -14,10 +14,10 @@ const getProducts = async () => {
 export default async function Home() {
   const products = await getProducts();
   const downProducts = products.filter((p) => p.change.dir == "down");
-  console.log(downProducts);
+  //console.log(downProducts);
 
   const upProducts = products.filter((p) => p.change.dir == "up");
-  console.log(upProducts);
+  //console.log(upProducts);
 
 
 
