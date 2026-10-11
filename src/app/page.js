@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import Marquee from "@/components/Marquee";
 import Banner from "@/components/Banner";
 
+
 const getProducts = async () => {
   const res = await fetch(`${baseUrl}/products`);
   const data = await res.json();
@@ -17,6 +18,8 @@ export default async function Home() {
 
   const upProducts = products.filter((p) => p.change.dir == "up");
   console.log(upProducts);
+
+
 
   return (
     <div>

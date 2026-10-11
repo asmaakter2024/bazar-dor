@@ -1,24 +1,3 @@
-// import React from "react";
-// import baseUrl from "@/services/baseUrl";
-
-// const getSingleProduct = async () => {
-//   const res = await fetch(`${baseUrl}/products`);
-//   const data = await res.json();
-//   return data;
-// };
-
-// const ProductDetails = async ({ params }) => {
-//   const { slug } = await params;
-//   //console.log(slug);
-
-//   const product = await getSingleProduct(slug);
-//   console.log(product)
-
-//   return <div>Details</div>;
-// };
-
-// export default ProductDetails;
-
 import baseUrl from "@/services/baseUrl";
 import Link from "next/link";
 

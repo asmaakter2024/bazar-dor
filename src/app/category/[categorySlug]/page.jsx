@@ -1,6 +1,7 @@
 import ProductCard from "../../../components/ProductCard";
 import baseUrl from "@/services/baseUrl";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const getCategoryProducts = async (categorySlug) => {
   const res = await fetch(`${baseUrl}/products?category=${categorySlug}`);
@@ -33,6 +34,10 @@ const CategoryProducts = async ({ params, searchParams }) => {
     sortedProducts.sort(
       (a, b) => Math.abs(b.change?.pct ?? 0) - Math.abs(a.change?.pct ?? 0),
     );
+  }
+
+  if(!currentCategory){
+    notFound()
   }
 
   return (
